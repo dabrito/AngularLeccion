@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MealService } from '../service/meal.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Meal } from '../interface/meal';
@@ -12,14 +12,14 @@ import { Meal } from '../interface/meal';
   styleUrl: './platos.component.css'
 })
 
-export class PlatosComponent{
+export class PlatosComponent implements OnInit {
   meals: Meal[] = [];
 
-  constructor(private mealService: MealService) { 
-    mealService.getMeals().subscribe((respuesta) => {
-      this.meals = respuesta as Array<Meal>;
+  constructor(private mealService: MealService) { }
+  
+  ngOnInit(): void {
+    this.mealService.getMeals().subscribe((respuesta: Meal[]) => {
+      this.meals = respuesta;
     });
   }
 }
-
-

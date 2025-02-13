@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Meal } from '../interface/meal';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,13 @@ export class MealService {
 
   constructor(private http: HttpClient) { }
 
-  getMeals(){
-    return this.http.get<Meal[]>(this.apiUrl);
+  getMeals(): Observable<Meal[]> {
+    return this.http.get<{ meals: Meal[] }>(this.apiUrl).pipe(
+      map(response => response.meals)
+    );
   }
 }
+
+  // getMeals(){
+  //   return this.http.get<Meal[]>(this.apiUrl);
+  // }
