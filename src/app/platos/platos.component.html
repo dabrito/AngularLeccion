@@ -1,0 +1,20 @@
+<div class="container">
+  <h2 class="mb-4 text-center">Nuestros Platos</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      @for(meal of meals; track meal.strMeal) {
+      <div class="card h-100">
+        <img class="card-img-top" [src]="meal.strMealThumb" [alt]="meal.strMeal">
+        <div class="card-body">
+          <h5 class="card-title">{{meal.strMeal}}</h5>
+          <p class="card-text">{{meal.strCategory}}</p>
+          <p class="card-text">{{meal.strArea}}</p>
+          <p class="card-text">{{meal.strInstructions}}</p>
+        </div>
+      </div>
+      } @empty {
+      <p>No hay platos disponibles</p>
+      }
+    </div>
+  </div>
+</div>

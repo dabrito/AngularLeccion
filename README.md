@@ -1,27 +1,17 @@
-# AngularLeccionRecetas
+Desarrolle una aplicación front-end con angular que consuma la información del siguiente servicio:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+https://www.themealdb.com/api/json/v1/1/search.php?s=
 
-## Development server
+La url posee información acerca de recetas de cocina (incluyendo imagen del plato). Muestre la información en elementos a su elección [No es necesario que muestre toda la información de un plato-seleccione la información relevante, la imagen es obligatoria].
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+La estructura de página debe estar dividida en mínimo los siguientes componentes:
 
-## Code scaffolding
+**header: Cabecera con datos de la empresa
+**menu: Menú de opciones [Home-Platos]
+**home: con información del Restaurante [a su gusto, debe utilizar diferentes componentes para mostrar la información, el carrusel es obligatorio.]
+**platos: Carga información del servicio
+**footer: Información del desarrollador
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**service/meal: Servicio que extrae la informacion de la api
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+La organización de los componentes queda a su criterio, el componente Home y platos debe cargarse mediante rutas accesibles desde el menú de opciones.
